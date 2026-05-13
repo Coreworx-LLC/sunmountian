@@ -1,0 +1,80 @@
+/* ============================================================
+   Sun Mountain Brand Site — Design Tokens
+   Source: Figma "Sun Mountain Brand System Site" (z6hQI1zJUfs9SrqBqO0TKs)
+   ============================================================ */
+
+:root {
+  /* ---- Brand colors ---- */
+  --c-mountain-green: #113027;
+  --c-deep-blue:      #121B35;
+  --c-scratch-black:  #1C1C1C;
+  --c-sand:           #EFEBDF;
+  --c-sun-yellow:     #E9CB7D;
+  --c-white:          #FFFFFF;
+
+  /* ---- Surface tokens ---- */
+  --bg-page:          var(--c-white);
+  --bg-sand:          var(--c-sand);
+  --bg-dark:          var(--c-mountain-green);
+  --bg-darker:        var(--c-scratch-black);
+  --bg-light:         var(--c-white);
+  --fg-on-dark:       var(--c-sand);
+  --fg-on-light:      var(--c-scratch-black);
+  --rule-on-dark:     rgba(239, 235, 223, 0.20);
+  --rule-on-light:    rgba(28, 28, 28, 0.15);
+  --nav-bg:           rgba(28, 28, 28, 0.86);
+
+  /* ---- Type families ----
+     Display = Freight Display Compressed Pro Bold Italic (paid)
+     Sub display = Bicyclette (paid)
+     Sans label = Bricolage Grotesque (Google Fonts)
+     Body = Avenir (paid)
+  */
+  --ff-display: "Freight Display Compressed Pro", "Freight Display Compressed", "FreightDisp Pro Compressed", "Playfair Display", "Times New Roman", serif;
+  --ff-label:   "Bricolage Grotesque", "Inter", system-ui, -apple-system, sans-serif;
+  --ff-sub:     "Bicyclette", "Inter", system-ui, -apple-system, sans-serif;
+  --ff-body:    "Avenir", "Avenir Next", "Inter", system-ui, -apple-system, sans-serif;
+
+  /* ---- Type sizes (Figma 1440 desktop reference) ---- */
+  --fs-page-title:  220px;   /* OUR BRAND, OUR LOGO, COLOR, etc. */
+  --fs-hero:        110px;   /* GOLF STATE of MIND */
+  --fs-display-xl:  90px;    /* mission statement etc. */
+  --fs-display-lg:  72px;    /* THE TQR STANDARD */
+  --fs-display-md:  53px;    /* section title (Trust, Quality, etc.) */
+  --fs-display-sm:  32px;    /* sub-section */
+  --fs-body-lg:     20px;
+  --fs-body:        18px;
+  --fs-body-sm:     16px;
+  --fs-meta:        14px;
+  --fs-caption:     12px;
+  --fs-tiny:        10px;
+
+  /* ---- Tracking ---- */
+  --ls-display:  -0.02em;
+  --ls-uppercase: 0.20em;       /* labels: 14px * 0.20 = 2.8px */
+  --ls-uppercase-wide: 0.30em;
+  --ls-personality: 0.20em;
+
+  /* ---- Layout ---- */
+  --canvas-w:    1440px;
+  --content-w:   1200px;
+  --gutter:      120px;
+  --col-gap:     24px;
+
+  /* ---- Spacing ---- */
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-5: 48px;
+  --s-6: 64px;
+  --s-7: 96px;
+  --s-8: 120px;
+  --s-9: 160px;
+
+  /* ---- Misc ---- */
+  --nav-h:       80px;
+  --footer-h:    437px;
+  --hero-h:      735px;
+  --transition:  0.2s ease;
+}

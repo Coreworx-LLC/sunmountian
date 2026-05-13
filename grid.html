@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grid &amp; Layouts — Sun Mountain</title>
+  <meta name="description" content="Layout systems, grid examples, and frame composition." />
+  <link rel="icon" href="assets/logos/Icon_2_Sand.svg" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body class="bg-white">
+
+  <nav class="site-nav" aria-label="Primary">
+    <a href="index.html" class="site-nav__brand-link" aria-label="Sun Mountain home">
+      <img class="site-nav__brand" src="assets/logos/Icon_2_Sand.svg" alt="Sun Mountain icon" />
+    </a>
+    <button class="site-nav__menu-toggle" aria-expanded="false" aria-controls="site-nav-items" aria-label="Open menu"><span class="bar"></span><span class="bar"></span></button>
+    <div class="site-nav__items" id="site-nav-items">
+      <a class="site-nav__item" href="brand.html"        data-page="brand.html">Brand</a>
+      <a class="site-nav__item" href="logo.html"         data-page="logo.html">Logo</a>
+      <a class="site-nav__item" href="color.html"        data-page="color.html">Color</a>
+      <a class="site-nav__item" href="typography.html"   data-page="typography.html">Typography</a>
+      <a class="site-nav__item" href="grid.html"         data-page="grid.html">Grid &amp; Layouts</a>
+      <a class="site-nav__item" href="photography.html"  data-page="photography.html">Photography</a>
+      <a class="site-nav__item" href="application.html"  data-page="application.html">Application</a>
+      <a class="site-nav__item" href="downloads.html"    data-page="downloads.html">Downloads</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>GRID<br />&amp; LAYOUTS</h1>
+    </section>
+
+    <!-- Section 1: Applying Headline, Subhead, and Logo — Figma 33:2612 -->
+    <section class="grid-section">
+      <div class="container">
+        <p class="logo-section__lead">Applying Headline, Subhead, and Logo</p>
+
+        <div class="grid-applying__image">
+          <img src="assets/img/grid%201@4x.png" alt="Grid layout system showing margins, columns, and logo placement" />
+        </div>
+
+        <div class="grid-applying__legend" aria-label="Margin legend">
+          <div class="grid-applying__legend-item">
+            <span class="grid-applying__legend-dot is-filled" aria-hidden="true">1</span>
+            <span>26px margin x 2 = 52px</span>
+          </div>
+          <div class="grid-applying__legend-item">
+            <span class="grid-applying__legend-dot" aria-hidden="true">2</span>
+            <span>26px margin x 2 = 52px</span>
+          </div>
+          <div class="grid-applying__legend-item">
+            <span class="grid-applying__legend-dot" aria-hidden="true">3</span>
+            <span>33px margin x 2 = 66px</span>
+          </div>
+        </div>
+
+        <div class="grid-applying__cols">
+          <article class="grid-applying__col">
+            <h3>Headline</h3>
+            <p>Headlines are applied to documents relative to the margins, format size, and line length. Use these examples as a reference for setting headlines across various application formats.</p>
+            <p>Note: The cap-height of headlines touches the top margin. The ascenders are allowed to protrude above it.</p>
+          </article>
+          <article class="grid-applying__col">
+            <h3>Subhead</h3>
+            <p>Subheadlines are applied relative to the headline. As stated on page 36, subheadlines should be at maximum 50% of the type size of the headline to ensure proper hierarchy.</p>
+          </article>
+          <article class="grid-applying__col">
+            <h3>Logo</h3>
+            <p>Our logo is generally applied in the bottom right corner. The width of the logo should be 2x the margin size. This ensures our logo scales proportionally with each application. For billboard use, the logo size can be increased for visibility at the discretion of the designer, using this page as an optical reference.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Layout Examples — Figma 33:2641 (3 stacked full-width images) -->
+    <section class="grid-section">
+      <div class="container">
+        <p class="logo-section__lead">Layout Examples</p>
+        <div class="layout-examples-stack">
+          <img src="assets/photos/this%20is%20a%20headline%404x%201.png" alt="Layout example 1" />
+          <img src="assets/photos/this%20is%20a%20headline%404x%202.png" alt="Layout example 2" />
+          <img src="assets/photos/this%20is%20a%20headline%404x%203.png" alt="Layout example 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Logo Frame &amp; Examples — Figma 34:3034 -->
+    <section class="grid-section">
+      <div class="container">
+        <p class="logo-section__lead">Logo Frame &amp; Examples</p>
+        <div class="frame-block">
+          <img src="assets/photos/frame%20layout%404x%201.png" alt="Logo frame layout examples" />
+          <p class="frame-block__copy">
+            This layout is used to identify our Sun Mountain ambassadors and athletes with our brand. The logo frame should be used with colors that are high contrast from the background and should frame the subject as indicated.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <img class="site-footer__wordmark" src="assets/logos/Wordmark_L_Sand.svg" alt="Sun Mountain" />
+      <div class="site-footer__contact">
+        <div class="site-footer__contact-label">Contact</div>
+        <p class="site-footer__contact-text">For Brand, Press, and Partnership questions reach out to:</p>
+        <div class="site-footer__contact-card">
+          <span class="name">Grant Lordan</span>
+          <span>Sr. Director Marketing &amp; Brand Strategy</span>
+          <span>M: 425-761-8233</span>
+          <a href="mailto:glordan@sunmountain.com">glordan@sunmountain.com</a>
+        </div>
+      </div>
+      <p class="site-footer__legal">
+        Copyright &copy; <span data-year>2026</span> Sun Mountain Sports. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

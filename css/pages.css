@@ -1,0 +1,1491 @@
+/* ============================================================
+   Page-specific styles — matches Figma screenshots exactly
+   ============================================================ */
+
+/* ============================================================
+   HOME (body.bg-sand)
+   Hero re-crops the same hero.jpg (5760×2940, 1.96:1 cinematic
+   crop with the golfer at horizontal center of the source) at
+   three exact aspect ratios captured from the Figma reference:
+
+     Desktop (≥1280px):  2576 / 1301  ≈ 1.98:1  cinematic wide
+     Tablet  (≤1280px):  1610 / 1397  ≈ 1.15:1  square-ish
+     Mobile  (≤640px):    778 / 1462  ≈ 0.53:1  portrait
+
+   Because the golfer is centered in the source, object-position
+   50% 50% works at every breakpoint — the visible window narrows
+   symmetrically around the subject as the container gets squarer.
+   ============================================================ */
+.home-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2576 / 1301;
+  max-height: calc(100svh);
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--c-mountain-green);
+  color: var(--c-white);
+}
+
+@media (max-width: 1280px) {
+  .home-hero {
+    aspect-ratio: 1610 / 1397;     /* tablet: square-ish */
+    min-height: 0;
+    max-height: none;
+  }
+}
+@media (max-width: 640px) {
+  .home-hero {
+    aspect-ratio: 778 / 1462;      /* mobile: portrait */
+    min-height: 600px;
+    max-height: 100svh;
+  }
+}
+
+.home-hero__photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Gradient fallback if hero.jpg is missing */
+  background:
+    radial-gradient(ellipse at 50% 90%, rgba(0,0,0,0.5), transparent 60%),
+    linear-gradient(to bottom, #1a3a30 0%, #2d543c 35%, #4d6f44 60%, #6d8954 80%, #8aa468 100%);
+}
+.home-hero__photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* Source is 1.96:1 with golfer centered. Default 50% 50% keeps the
+     subject centered as the container reshapes — sides crop equally
+     on tablet/mobile, top/bottom barely crop on desktop (1.96 vs 1.98). */
+  object-position: 50% 50%;
+}
+
+/* Top vignette under nav — keeps nav legible without darkening photo too much */
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 180px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+/* Bottom vignette — kept subtle so the photo's natural foreground reads
+   like the references; just enough contrast under the wordmark + label. */
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28%;
+  background: linear-gradient(to top, rgba(0,0,0,0.32), transparent 90%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Headline — vertically + horizontally centered as a unit */
+.home-hero__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: calc(100% - 2 * var(--s-5));
+  text-align: center;
+}
+
+.home-hero__headline {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-style: italic;
+  /* Measured from Figma 1440 design: headline is 407px wide (28% viewport),
+     ~88px font-size = ~6.1vw. 2-line height 182px => line-height ~1.03.
+     6.5vw scales nicely from 1440 (94px) up to 2576 (167px) and down. */
+  font-size: clamp(48px, 6.5vw, 170px);
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: var(--c-white);
+  text-align: center;
+  text-shadow: 0 2px 28px rgba(0,0,0,0.30);
+  margin: 0;
+  white-space: nowrap;
+}
+/* Per Figma: tighter A in STATE, narrow "of" italic */
+.home-hero__headline .kern { letter-spacing: -0.12em; margin: 0 -0.02em; }
+.home-hero__headline .lower {
+  text-transform: lowercase;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  margin: 0 0.04em;
+}
+
+@media (max-width: 640px) {
+  /* Mobile: bump the vw multiplier so the headline still reads at narrow widths.
+     At 390px viewport: 13vw = 51px (clamped to 48 min); at 640 = 83px. */
+  .home-hero__headline {
+    white-space: normal;
+    font-size: clamp(48px, 13vw, 96px);
+  }
+}
+
+/* Wordmark + sublabel anchored to bottom of photo. Figma 1440 design has
+   the wordmark ~425px wide (29.5vw) and the bottom of the sublabel ~41px
+   from the hero bottom edge. */
+.home-hero__brand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(20px, 3vw, 60px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.home-hero__wordmark {
+  /* Measured from Figma 1440 design: wordmark+sublabel bbox 425px wide.
+     30vw matches that ratio; 460px cap prevents runaway on ultrawide. */
+  width: clamp(260px, 30vw, 460px);
+  height: auto;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.20));
+}
+.home-hero__sublabel {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: clamp(11px, 0.95vw, 16px);
+  letter-spacing: 0.40em;
+  text-transform: uppercase;
+  color: var(--c-white);
+  opacity: 0.95;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.30);
+}
+
+@media (max-width: 640px) {
+  .home-hero__brand { gap: 8px; bottom: clamp(16px, 5vw, 32px); }
+  .home-hero__sublabel { letter-spacing: 0.30em; }
+}
+
+/* Mission statement — Sand bg, left-aligned display */
+.mission {
+  background: var(--c-sand);
+  padding: var(--s-9) 0 var(--s-7);
+}
+.mission__statement {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(40px, 5.5vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--c-scratch-black);
+  max-width: 900px;
+}
+
+/* TQR pillars on Home (sand bg) */
+.tqr-standard {
+  background: var(--c-sand);
+  padding: var(--s-7) 0 var(--s-9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-7);
+}
+.tqr-standard__badge {
+  width: 132px;
+  height: auto;
+}
+
+/* Quick access — white panel between TQR and footer */
+.quick-access {
+  background: var(--c-white);
+  padding: var(--s-8) 0 var(--s-9);
+}
+.quick-access__inner {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-5);
+  text-align: center;
+}
+.quick-access__title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.quick-access__rule {
+  width: 280px;
+  max-width: 60%;
+  height: 1px;
+  background: var(--rule-on-light);
+}
+.quick-access__buttons {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: var(--s-3);
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .quick-access__buttons { grid-template-columns: repeat(2, 1fr); width: 100%; max-width: 480px; }
+  .quick-access__buttons .btn { width: 100%; }
+}
+@media (max-width: 520px) {
+  .quick-access__buttons { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   BRAND (body.bg-sand) — per Figma 22:392/22:375/22:395/30:428
+   Section backgrounds alternate: White → Sand → Green → Sand
+   ============================================================ */
+
+/* Big section headline reused across TQR / Personality / Voice & Tone */
+.brand-display-title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(64px, 10vw, 115px);
+  line-height: 0.9;             /* 103/115 ≈ 0.9 */
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.brand-display-sub {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  margin: 16px 0 0;
+}
+
+/* Reusable 3-col Purpose/Vision/Mission style block (Freight 53px + rule + Avenir Book 18px) */
+.brand-tri-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+}
+.brand-tri-col h3 {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 53px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--c-scratch-black);
+  margin: 0 0 22px;
+}
+.brand-tri-col h3::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  margin-top: 22px;
+}
+.brand-tri-col p {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--c-scratch-black);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .brand-tri-cols { grid-template-columns: 1fr; row-gap: 36px; }
+  .brand-tri-col h3 { font-size: 40px; }
+}
+
+/* Section 1: Mission (WHITE bg) */
+.brand-mission {
+  background: var(--c-white);
+  padding: 80px 0 80px;
+  color: var(--c-scratch-black);
+}
+.brand-mission__lead {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.14;            /* 64/56 */
+  letter-spacing: -0.02em;
+  color: var(--c-scratch-black);
+  max-width: 996px;
+  margin: 0 0 80px;
+}
+
+/* Section 2: TQR Standard (SAND bg) */
+.brand-tqr {
+  background: var(--c-sand);
+  padding: 141px 0 96px;
+  color: var(--c-scratch-black);
+}
+.brand-tqr__layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 96px;
+}
+.brand-tqr__head {
+  flex: 1;
+  min-width: 0;
+  max-width: 854px;
+}
+.brand-tqr__head .brand-display-title { color: var(--c-scratch-black); }
+.brand-tqr__head .brand-display-sub { color: var(--c-scratch-black); }
+.brand-tqr__badge {
+  flex-shrink: 0;
+  width: 153px;
+  height: auto;
+  margin-top: 4px;
+}
+
+/* Section 3: Personality (GREEN bg) */
+.brand-personality {
+  background: var(--c-mountain-green);
+  color: var(--c-sand);
+  padding: 173px 0 200px;
+}
+.brand-personality__title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(64px, 10vw, 115px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--c-sand);
+  margin: 0 0 24px;
+}
+.brand-personality__sub {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.38;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-sand);
+  max-width: 612px;
+  margin: 0 0 80px;
+}
+.brand-personality__rule {
+  border: 0;
+  height: 1px;
+  background: var(--c-sand);
+  opacity: 0.6;
+  margin: 0 0 78px;
+}
+/* Flex-row layout: each row uses justify-content: space-between so 2-item
+   rows go end-to-end and 3-item rows distribute left/center/right.
+   Items size to their content (no fixed columns), so long words like
+   CRAFTSMANSHIP and PURPOSE-BUILT can never overflow a fixed column. */
+.brand-personality__rows {
+  display: flex;
+  flex-direction: column;
+  row-gap: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.brand-personality__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.brand-personality__row li {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: clamp(22px, 3.3vw, 48px);
+  line-height: 1.6;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-sand);
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1100px) {
+  .brand-personality__row li { font-size: clamp(20px, 3vw, 36px); letter-spacing: 0.16em; }
+}
+@media (max-width: 720px) {
+  .brand-personality { padding: 96px 0; }
+  .brand-personality__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .brand-personality__row li { font-size: 24px; letter-spacing: 0.16em; white-space: normal; }
+}
+
+/* Section 4: Voice & Tone (SAND bg) */
+.brand-voice {
+  background: var(--c-sand);
+  padding: 160px 0 160px;
+  color: var(--c-scratch-black);
+}
+.brand-voice__head {
+  margin-bottom: 92px;
+  max-width: 854px;
+}
+.brand-voice__head .brand-display-title { color: var(--c-scratch-black); }
+.brand-voice__head .brand-display-sub { color: var(--c-scratch-black); }
+.brand-voice__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+}
+.brand-voice__col h3 {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 53px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--c-scratch-black);
+  margin: 0 0 22px;
+}
+.brand-voice__col h3::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  margin-top: 22px;
+}
+/* Voice/Tone column rhythm:
+   - h4 (Avenir Heavy subhead) sits tight to its first p or ul
+   - 24px gap before each subsequent h4 (creates section break)
+   - 24px gap before a standalone p that follows a ul (e.g. closing line) */
+.brand-voice__col h4 {
+  font-family: var(--ff-body);
+  font-style: normal;
+  font-weight: 800;              /* Avenir Heavy */
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 0;
+  color: var(--c-scratch-black);
+}
+.brand-voice__col p {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  color: var(--c-scratch-black);
+}
+.brand-voice__col ul {
+  margin: 0;
+  padding: 0 0 0 27px;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--c-scratch-black);
+}
+.brand-voice__col li { margin: 0; }
+/* Section breaks: gap before each h4 except the first, and before a p that
+   follows a ul (the closing standalone paragraph). */
+.brand-voice__col > h4 + h4,
+.brand-voice__col > p + h4,
+.brand-voice__col > ul + h4,
+.brand-voice__col > ul + p {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .brand-mission { padding: 64px 0; }
+  .brand-tqr { padding: 96px 0; }
+  .brand-voice { padding: 96px 0; }
+  .brand-voice__cols { grid-template-columns: 1fr; row-gap: 64px; }
+  .brand-voice__col h3 { font-size: 40px; }
+  .brand-tqr__badge { position: static; margin-bottom: 32px; }
+  .brand-tqr__head { margin-bottom: 48px; }
+}
+
+/* ============================================================
+   LOGO (white)
+   ============================================================ */
+.logo-section {
+  background: var(--c-white);
+  padding: var(--s-7) 0 var(--s-7);
+}
+/* Section labels — per Figma: Bicyclette Light 24px, 4.8px tracking (0.20em), uppercase */
+.logo-section__lead {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-scratch-black);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule-on-light);
+  margin-bottom: var(--s-6);
+}
+.body-bg-black .logo-section__lead { color: var(--c-sand); border-bottom-color: var(--rule-on-dark); }
+.logo-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-7) 0;
+}
+.logo-showcase img { max-width: 360px; height: auto; }
+
+.logo-variations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-7);
+  align-items: center;
+  margin-bottom: var(--s-5);
+}
+.logo-variations-grid > .cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+.logo-variations-grid > .cell.left  { justify-content: flex-start; }
+.logo-variations-grid > .cell.right { justify-content: flex-end; }
+.logo-variations-grid > .cell img { max-height: 64px; }
+
+.logo-variations-center {
+  display: flex; justify-content: center; padding-top: var(--s-2);
+}
+.logo-variations-center img { max-height: 64px; }
+
+.logo-icon {
+  display: flex; justify-content: center; padding: var(--s-7) 0;
+}
+.logo-icon img { max-height: 80px; }
+
+/* Logo suite — 2×2 grid of pre-composed images per Figma 30:1016 (each 600×425) */
+.logo-suite {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: var(--s-3);
+}
+.logo-suite__cell {
+  position: relative;
+  aspect-ratio: 600 / 425;
+  display: block;
+}
+.logo-suite__cell img {
+  width: 100%;
+  height: 100%;
+  /* contain — guarantees the entire wordmark is always visible.
+     Aspect ratios match (2400/1700 ≈ 600/425) so no letterboxing. */
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .logo-suite { grid-template-columns: 1fr; }
+}
+
+.logo-clearspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-7);
+  align-items: center;
+  padding: var(--s-5) 0;
+}
+.logo-clearspace > .cell {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 200px;
+}
+.logo-clearspace img { max-width: 100%; max-height: 220px; }
+
+/* Logo Misuse — per Figma 30:1168 spec
+   Each cell: 386 wide. Image (386×285) on top, 17px gap, then row with X (33×33) + 12px + label.
+   Text: Avenir Roman 18px, sentence case, color #231f20.
+   Row gap (between rows of 3): 43px. Column gap: 21px. */
+.logo-misuse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 21px;
+  row-gap: 43px;
+  margin-top: var(--s-3);
+}
+
+.logo-misuse-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.logo-misuse-cell__image {
+  width: 100%;
+  aspect-ratio: 386 / 285;
+  background: var(--c-sand);
+  overflow: hidden;
+}
+.logo-misuse-cell__image img {
+  width: 100%;
+  height: 100%;
+  /* contain — never crop the misuse logo. Cell bg is sand, matches PNG bg. */
+  object-fit: contain;
+  display: block;
+}
+.logo-misuse-cell__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #231F20;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.logo-misuse-cell__label .x-icon {
+  flex-shrink: 0;
+  width: 33px;
+  height: 33px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .logo-variations-grid, .logo-clearspace { grid-template-columns: 1fr; }
+  .logo-misuse-grid { grid-template-columns: 1fr 1fr; column-gap: 16px; row-gap: 32px; }
+}
+@media (max-width: 520px) {
+  .logo-misuse-grid { grid-template-columns: 1fr; row-gap: 28px; }
+}
+
+/* ============================================================
+   COLOR (white)
+   ============================================================ */
+/* ---- Color Overview — Figma 30:1422: 1200×975, 4 cols, cols 3+4 split ---- */
+.color-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  height: clamp(700px, 81vw, 975px);
+  gap: 0;
+  margin-top: var(--s-3);
+}
+.color-overview .swatch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  overflow: hidden;
+}
+.swatch__name {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.swatch__values {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+.color-overview .swatch--small .swatch__values { font-size: 10px; }
+
+.color-overview .swatch--mountain {
+  background: var(--c-mountain-green); color: var(--c-white);
+  grid-column: 1; grid-row: 1 / 3;
+}
+.color-overview .swatch--blue {
+  background: var(--c-deep-blue); color: var(--c-white);
+  grid-column: 2; grid-row: 1 / 3;
+}
+.color-overview .swatch--yellow {
+  background: var(--c-sun-yellow); color: #231F20;
+  grid-column: 3; grid-row: 1;
+}
+.color-overview .swatch--sand {
+  background: var(--c-sand); color: #231F20;
+  grid-column: 3; grid-row: 2;
+}
+.color-overview .swatch--black {
+  background: var(--c-scratch-black); color: var(--c-white);
+  grid-column: 4; grid-row: 1;
+}
+.color-overview .swatch--white {
+  background: var(--c-white); color: #231F20;
+  grid-column: 4; grid-row: 2;
+  border: 1px solid var(--rule-on-light);
+}
+
+@media (max-width: 900px) {
+  .color-overview {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 220px);
+    height: auto;
+  }
+  .color-overview .swatch--mountain { grid-column: 1; grid-row: 1 / 3; }
+  .color-overview .swatch--blue     { grid-column: 2; grid-row: 1 / 3; }
+  .color-overview .swatch--yellow   { grid-column: 1; grid-row: 3; }
+  .color-overview .swatch--sand     { grid-column: 1; grid-row: 4; }
+  .color-overview .swatch--black    { grid-column: 2; grid-row: 3; }
+  .color-overview .swatch--white    { grid-column: 2; grid-row: 4; }
+}
+@media (max-width: 520px) {
+  .color-overview {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 200px);
+  }
+  .color-overview .swatch--mountain { grid-column: 1; grid-row: 1; }
+  .color-overview .swatch--blue     { grid-column: 1; grid-row: 2; }
+  .color-overview .swatch--yellow   { grid-column: 1; grid-row: 3; }
+  .color-overview .swatch--sand     { grid-column: 1; grid-row: 4; }
+  .color-overview .swatch--black    { grid-column: 1; grid-row: 5; }
+  .color-overview .swatch--white    { grid-column: 1; grid-row: 6; }
+}
+
+/* ---- Type & Color and Usage Examples — single full-width composite images per Figma ---- */
+.color-image-block {
+  margin-top: var(--s-3);
+  width: 100%;
+}
+.color-image-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Color Misuse — same structure as Logo Misuse (Figma 30:1486) */
+.color-misuse-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 21px;
+  row-gap: 43px;
+  margin-top: var(--s-3);
+}
+.color-misuse-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.color-misuse-cell__image {
+  width: 100%;
+  aspect-ratio: 386 / 285;
+  background: var(--c-sand);
+  overflow: hidden;
+}
+.color-misuse-cell__image img {
+  width: 100%;
+  height: 100%;
+  /* contain — never crop the logo within the misuse composition. */
+  object-fit: contain;
+  display: block;
+}
+.color-misuse-cell__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #231F20;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.color-misuse-cell__label .x-icon {
+  flex-shrink: 0;
+  width: 33px;
+  height: 33px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .color-misuse-row { grid-template-columns: 1fr 1fr; column-gap: 16px; row-gap: 32px; }
+}
+@media (max-width: 520px) {
+  .color-misuse-row { grid-template-columns: 1fr; row-gap: 28px; }
+}
+
+/* ============================================================
+   TYPOGRAPHY (white) — per Figma 33:2152 + 33:2193
+   ============================================================ */
+
+/* ---- Typography Overview ----
+   4 rows. Each row has a thin top divider, two Avenir 12px labels on the
+   left (category name + font name), then the alphabet sample image on the
+   right ~62% of the width. Figma column anchors:
+     col 1 starts at 0%
+     col 2 starts at 15.94%
+     col 3 starts at ~40.7% (image at left:457 in 1123-wide grid) */
+.type-overview {
+  background: var(--c-white);
+  padding: var(--s-7) 0;
+}
+.type-row {
+  display: grid;
+  grid-template-columns: 16fr 24fr 60fr;
+  column-gap: 0;
+  align-items: flex-start;
+  padding: 14px 0 28px;
+  border-top: 1px solid #231F20;
+}
+.type-row .meta-label,
+.type-row .meta-font {
+  font-family: var(--ff-body);
+  font-weight: 500;        /* Avenir Medium per Figma */
+  font-size: 12px;
+  line-height: 1.3;
+  color: #231F20;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+.type-row .meta-font { font-weight: 400; }      /* Avenir Roman */
+.type-row__sample {
+  display: block;
+  width: 100%;
+  height: auto;
+  align-self: center;
+  max-height: 168px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ---- Type Hierarchy ----
+   6 rows. Each row has a thin top divider, three narrow text columns on
+   the left (label / font + leading + tracking / weight + size + value),
+   and a large visual sample on the right. Figma column anchors:
+     col 1 (label):       0
+     col 2 (font stack):  ~15.21% (left:182px in 1198 grid)
+     col 3 (weight stack): ~33.07% (left:396px)
+     col 4 (sample):      ~44.83% (left:538px) → 100% */
+.type-hierarchy {
+  background: var(--c-white);
+  padding: var(--s-7) 0 var(--s-9);
+}
+.type-hierarchy__row {
+  display: grid;
+  grid-template-columns: 15fr 18fr 13fr 54fr;
+  column-gap: 0;
+  align-items: flex-start;       /* all cells anchor at the same row top */
+  padding: 14px 0 36px;
+  border-top: 1px solid #231F20;
+}
+/* The meta text is small and sits at row top; the giant Display sample
+   needs its line-box anchored the same way so the cap-height of "Display
+   Headlines" sits in the upper portion of the row, not floating mid-row. */
+.type-hierarchy__row > .meta-label,
+.type-hierarchy__row > .meta-stack,
+.type-hierarchy__row > .th-sample {
+  align-self: start;
+}
+.type-hierarchy__row .meta-label {
+  font-family: var(--ff-body);
+  font-weight: 500;        /* Avenir Medium */
+  font-size: 12px;
+  line-height: 1.3;
+  color: #231F20;
+  margin-top: 0;
+}
+.type-hierarchy__row .meta-stack {
+  font-family: var(--ff-body);
+  font-weight: 400;        /* Avenir Roman */
+  font-size: 10px;
+  line-height: 1.4;
+  color: #231F20;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0;
+}
+
+/* Visual sample styles — matched to Figma per row */
+.th-sample {
+  align-self: flex-start;
+  color: #231F20;
+}
+
+/* Display Headlines — Freight Display Compressed Bold Italic 108px */
+.th-display {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(56px, 9vw, 108px);
+  line-height: 0.85;
+  letter-spacing: -0.01em;       /* metric -10 */
+  margin-top: 0;
+  white-space: nowrap;           /* Figma: per "Display Headlines" never wraps */
+}
+
+/* Headlines — Bicyclette Thin 54px */
+.th-headline {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: clamp(36px, 4.6vw, 54px);
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Subheadings — Bicyclette Light 36px tracking 3.6px = 0.10em */
+.th-sub {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.1;              /* 39.6/36 */
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* Label — Avenir Medium 16px (caps; "100 tracking" is in the sample text) */
+.th-label {
+  font-family: var(--ff-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;              /* 19.2/16 */
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* Body — Avenir Roman 14.138px / 19.2px line-height */
+.th-body {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 14.138px;
+  line-height: 1.36;             /* 19.2/14.138 */
+  letter-spacing: 0;
+  max-width: 540px;
+  color: #231F20;
+}
+
+/* Captions — Avenir Roman 8px / 9.6px line-height */
+.th-caption {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 1.2;              /* 9.6/8 */
+  letter-spacing: 0;
+  max-width: 480px;
+  color: #231F20;
+}
+
+@media (max-width: 1100px) {
+  .type-hierarchy__row {
+    grid-template-columns: minmax(110px, 14fr) minmax(120px, 18fr) minmax(70px, 12fr) minmax(0, 56fr);
+    column-gap: 12px;
+  }
+  .th-display  { font-size: clamp(56px, 8vw, 88px); }
+  .th-headline { font-size: clamp(32px, 4vw, 44px); }
+  .th-sub      { font-size: clamp(22px, 2.6vw, 30px); }
+}
+
+@media (max-width: 900px) {
+  .type-row {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    padding: 14px 0 20px;
+  }
+  .type-row__sample { max-height: 130px; }
+  .type-hierarchy__row {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    padding: 14px 0 28px;
+  }
+  .th-display  { font-size: 56px; margin-top: 0; }
+  .th-headline { font-size: 36px; }
+  .th-sub      { font-size: 24px; letter-spacing: 0.08em; }
+  .th-body     { font-size: 14px; }
+  .th-caption  { font-size: 9px; }
+}
+
+/* ============================================================
+   GRID & LAYOUTS (white) — per Figma 33:2612, 33:2641, 34:3034
+   ============================================================ */
+.grid-section {
+  background: var(--c-white);
+  padding: var(--s-7) 0 var(--s-8);
+}
+
+/* ---- Section 1: Applying Headline, Subhead, and Logo ---- */
+.grid-applying__image {
+  width: 100%;
+  margin-top: var(--s-3);
+}
+.grid-applying__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.grid-applying__legend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-3);
+  max-width: 700px;
+  margin: 28px 0 var(--s-7);
+  padding-left: 24%;            /* per Figma the legend sits 294px from left */
+  font-family: var(--ff-body);
+  font-size: 12px;
+  color: #231F20;
+}
+.grid-applying__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.grid-applying__legend-dot {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-body);
+  font-size: 12px;
+  line-height: 1;
+  color: #231F20;
+  border: 1px solid #231F20;
+}
+.grid-applying__legend-dot.is-filled {
+  background: #231F20;
+  color: var(--c-sand);
+}
+
+.grid-applying__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+}
+.grid-applying__col h3 {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 53px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--c-scratch-black);
+  margin-bottom: 22px;
+}
+.grid-applying__col h3::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--rule-on-light);
+  margin-top: 22px;
+}
+.grid-applying__col p {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--c-scratch-black);
+  margin-bottom: 24px;
+}
+.grid-applying__col p:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .grid-applying__legend {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    gap: 8px;
+  }
+  .grid-applying__cols { grid-template-columns: 1fr; row-gap: 32px; }
+  .grid-applying__col h3 { font-size: 38px; }
+}
+
+/* ---- Section 2: Layout Examples — 3 stacked full-width images ---- */
+.layout-examples-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: var(--s-3);
+}
+.layout-examples-stack img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1196 / 762;
+  object-fit: cover;
+  background: var(--c-sand);
+}
+
+@media (max-width: 900px) {
+  .layout-examples-stack { gap: 28px; }
+}
+
+/* ---- Section 3: Logo Frame & Examples ---- */
+.frame-block {
+  margin-top: var(--s-3);
+}
+.frame-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1196 / 491;
+  object-fit: cover;
+  background: var(--c-sand);
+}
+.frame-block__copy {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--c-scratch-black);
+  max-width: 674px;
+  margin-top: var(--s-5);
+}
+
+/* ============================================================
+   PHOTOGRAPHY (body.bg-black — Scratch Black)
+   Per Figma 34:3613 / 34:3826 / 34:3944 / 35:4056
+   ============================================================ */
+.body-bg-black { background: var(--c-scratch-black); color: var(--c-white); }
+.body-bg-black .page-hero { background: var(--c-mountain-green); color: var(--c-sand); }
+.body-bg-black .page-hero h1 { color: var(--c-sand); }
+.body-bg-black main { background: var(--c-scratch-black); color: var(--c-white); }
+.body-bg-black .site-footer { background: var(--c-scratch-black); border-top: 1px solid var(--rule-on-dark); }
+
+.photo-section {
+  background: var(--c-scratch-black);
+  color: var(--c-white);
+  padding: var(--s-7) 0;
+}
+
+/* 2-column copy block under section title (Overview, Lifestyle) */
+.photo-section__copy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  margin: 0 0 var(--s-7);
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--c-white);
+}
+.photo-section__copy p { margin: 0; }
+.photo-section__copy p + p { margin-top: 24px; }
+.photo-section__copy .principles {
+  font-family: var(--ff-body);
+  font-weight: 800;          /* Avenir Heavy */
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+.photo-section__copy ul {
+  margin: 0;
+  padding-left: 1.4em;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Single-column copy (Talent, Product) */
+.photo-section__lead {
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--c-white);
+  max-width: 690px;
+  margin: 0 0 var(--s-6);
+}
+.photo-section__lead p { margin: 0; }
+.photo-section__lead p + p { margin-top: 24px; }
+
+@media (max-width: 900px) {
+  .photo-section__copy { grid-template-columns: 1fr; row-gap: 32px; }
+}
+
+/* ============================================================
+   FLUID PHOTO GRIDS — perfect rectangle at any browser width.
+   Each container locks to an aspect-ratio; rows are `1fr` so the
+   grid divides the height proportionally; photos use object-fit:
+   cover so they crop into their cell instead of dictating row height.
+   ============================================================ */
+
+/* ---- Overview grid (Figma 34:3613): 3 cols × 3 rows.
+   Tall items span 2 rows; short items span 1 row.
+   Layout (grid-template-areas):
+       Col 1   Col 2   Col 3
+   r1:  a       b       c
+   r2:  a       e       c
+   r3:  d       e       f
+*/
+.photo-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "a b c"
+    "a e c"
+    "d e f";
+  gap: 15px;
+  /* Total Figma rectangle: 1200×815 (the photos area) */
+  aspect-ratio: 1200 / 815;
+}
+.photo-overview-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-width: 0;
+  min-height: 0;
+}
+.photo-overview-grid .a { grid-area: a; }  /* tall — col 1 top */
+.photo-overview-grid .b { grid-area: b; }  /* short — col 2 top */
+.photo-overview-grid .c { grid-area: c; }  /* tall — col 3 top */
+.photo-overview-grid .d { grid-area: d; }  /* short — col 1 bottom */
+.photo-overview-grid .e { grid-area: e; }  /* tall — col 2 bottom */
+.photo-overview-grid .f { grid-area: f; }  /* short — col 3 bottom */
+
+/* ---- Lifestyle grid (Figma 34:3826): 3 cols at asymmetric widths,
+   each column is its own internal grid with custom row split so
+   inner edges line up while outer rectangle stays locked. */
+.photo-lifestyle-grid {
+  display: grid;
+  grid-template-columns: 1.21fr 1fr 1.52fr;
+  gap: 15px;
+  aspect-ratio: 1199 / 805;
+}
+.photo-lifestyle-grid .col {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.photo-lifestyle-grid .col1 { grid-template-rows: 452fr 336fr; }
+.photo-lifestyle-grid .col2 { grid-template-rows: 383fr 406fr; }
+.photo-lifestyle-grid .col3 { grid-template-rows: 426fr 363fr; }
+.photo-lifestyle-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ---- Talent grid (Figma 34:3944): col 1 stacked tall+short,
+   col 2+3 are a top row of 2 short photos + a wide bottom photo
+   spanning both. Whole rectangle is locked. */
+.photo-talent-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  aspect-ratio: 1200 / 819;
+}
+.photo-talent-grid .col {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.photo-talent-grid .col-1  { grid-template-rows: 515fr 288fr; }
+.photo-talent-grid .col-23 { grid-template-rows: 287fr 515fr; }
+.photo-talent-grid .col-23 .top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  min-height: 0;
+}
+.photo-talent-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-width: 0;
+  min-height: 0;
+}
+
+@media (max-width: 900px) {
+  /* Tablet: keep the rectangles locked but compress to 2-up where possible */
+  .photo-overview-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "a b"
+      "a e"
+      "c e"
+      "d f";
+    aspect-ratio: 800 / 1086;
+    gap: 12px;
+  }
+  .photo-lifestyle-grid {
+    aspect-ratio: 800 / 1100;
+    grid-template-columns: 1fr 1fr;
+  }
+  .photo-lifestyle-grid .col3 { grid-column: 1 / 3; grid-template-rows: 426fr 363fr; grid-template-columns: 1fr 1fr; }
+  .photo-lifestyle-grid .col3 .a,
+  .photo-lifestyle-grid .col3 .b { grid-row: 1; }
+  .photo-lifestyle-grid .col3 .a { grid-column: 1; }
+  .photo-lifestyle-grid .col3 .b { grid-column: 2; }
+  .photo-talent-grid {
+    grid-template-columns: 1fr;
+    aspect-ratio: 800 / 1200;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Mobile: drop the locked rectangles and let images stack naturally */
+  .photo-overview-grid,
+  .photo-lifestyle-grid,
+  .photo-talent-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    aspect-ratio: auto;
+  }
+  .photo-overview-grid img,
+  .photo-lifestyle-grid img,
+  .photo-talent-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .photo-talent-grid .col-23 .top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ---- Product (single composite image) ---- */
+.photo-product-image {
+  width: 100%;
+  margin-top: 0;
+}
+.photo-product-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #2a2a2a;
+}
+
+/* ============================================================
+   APPLICATION (white) — Figma 5-section layout.
+   Each section: section label + horizontal rule (handled by
+   .logo-section__lead) followed by a full-width composite image.
+   Sections share the same Bicyclette Light 24px label as the
+   Logo / Color / Typography / Photography pages so the visual
+   rhythm of the site stays consistent.
+   ============================================================ */
+.app-section {
+  background: var(--c-white);
+  padding: var(--s-6) 0 var(--s-7);
+}
+.app-section__media {
+  width: 100%;
+  margin-top: 0;            /* .logo-section__lead already provides bottom rule + 48px gap */
+}
+.app-section__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tighten vertical rhythm on small screens so sections don't stretch. */
+@media (max-width: 900px) {
+  .app-section { padding: var(--s-5) 0 var(--s-6); }
+}
+
+/* ============================================================
+   DOWNLOADS (white) — per Figma 37:5164/5119/5182/5215/295:6483
+   Reuses .color-overview, .type-row, and .photo-overview-grid
+   from Color, Typography, and Photography pages.
+   ============================================================ */
+.dl-section {
+  background: var(--c-white);
+  padding: var(--s-7) 0;
+}
+
+/* Section header: title left, ghost button right (like Figma) */
+.dl-section__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule-on-light);
+  margin-bottom: var(--s-7);
+}
+.dl-section__title {
+  font-family: var(--ff-sub);
+  font-style: normal;          /* override global h1-h4 italic default */
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-scratch-black);
+  margin: 0;
+}
+
+/* Logos: centered wordmark, no extra padding */
+.dl-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-5) 0;
+}
+.dl-logos img {
+  width: 470px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Other Resources — centered title with rule + 3 buttons */
+.dl-other {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-6);
+  padding: var(--s-7) 0;
+}
+.dl-other__title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 384px;
+  max-width: 100%;
+}
+.dl-other__title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 53px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin: 0;
+}
+.dl-other__rule {
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background: var(--rule-on-light);
+  margin: 0;
+}
+.dl-other__buttons {
+  display: flex;
+  gap: 61px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .dl-other__buttons { gap: var(--s-3); }
+}

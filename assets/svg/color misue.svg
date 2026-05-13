@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1327.5 792">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #e9cb7d;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+        font-family: Avenir-Roman, Avenir;
+        font-size: 18px;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: #113027;
+      }
+
+      .cls-6 {
+        fill: #245b49;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-10 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath-7);
+      }
+
+      .cls-12 {
+        clip-path: url(#clippath-6);
+      }
+
+      .cls-13 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: 0em;
+      }
+
+      .cls-16 {
+        letter-spacing: 0em;
+      }
+
+      .cls-17 {
+        letter-spacing: 0em;
+      }
+
+      .cls-18 {
+        fill: #eab938;
+      }
+
+      .cls-19 {
+        letter-spacing: 0em;
+      }
+
+      .cls-20 {
+        letter-spacing: 0em;
+      }
+
+      .cls-21 {
+        opacity: .55;
+      }
+
+      .cls-22 {
+        letter-spacing: 0em;
+      }
+
+      .cls-23 {
+        fill: #003149;
+      }
+
+      .cls-24 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-25 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-26 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-27 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-28 {
+        letter-spacing: 0em;
+      }
+
+      .cls-29 {
+        fill: #121c35;
+        font-family: FreightDispCmpProBold-Italic, 'Freight Display Compressed';
+        font-size: 133.97px;
+        font-style: italic;
+      }
+
+      .cls-30 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-31 {
+        fill: #f4eae8;
+      }
+
+      .cls-32 {
+        fill: #a6210c;
+      }
+
+      .cls-33 {
+        fill: #efebdf;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="1327.5" height="792"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" width="1327.5" height="792"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" y="420" width="430.5" height="318" rx="6" ry="6"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="15.91" y1="-1569.99" x2="16.91" y2="-1569.99" gradientTransform="translate(-6850.29 -675299.66) scale(430.5 -430.5)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#113027"/>
+      <stop offset="1" stop-color="#efebdf"/>
+      <stop offset="1" stop-color="#efebdf"/>
+    </linearGradient>
+    <clipPath id="clippath-3">
+      <rect class="cls-1" width="1327.5" height="792"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <rect class="cls-1" x="478.47" y="52.88" width="174.23" height="185.23"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <rect class="cls-1" x="576.63" y="52.88" width="174.23" height="185.23"/>
+    </clipPath>
+    <clipPath id="clippath-6">
+      <rect class="cls-1" x="674.79" y="52.88" width="174.23" height="185.23"/>
+    </clipPath>
+    <clipPath id="clippath-7">
+      <rect class="cls-1" width="1327.5" height="792"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-30">
+      <g class="cls-7">
+        <rect class="cls-31" x="448.5" width="430.5" height="318" rx="6" ry="6"/>
+        <rect class="cls-31" x="897" width="430.5" height="318" rx="6" ry="6"/>
+      </g>
+      <g class="cls-10">
+        <rect class="cls-4" y="420" width="430.5" height="318"/>
+      </g>
+      <g class="cls-8">
+        <rect class="cls-33" x="446" y="423" width="430.5" height="318" rx="6" ry="6"/>
+        <rect class="cls-5" width="430.5" height="318" rx="6" ry="6"/>
+        <g class="cls-21">
+          <g class="cls-9">
+            <path class="cls-5" d="M565.59,237.12c43.14,0,78.12-34.97,78.12-78.12s-34.97-78.12-78.12-78.12-78.12,34.97-78.12,78.12,34.97,78.12,78.12,78.12"/>
+          </g>
+        </g>
+        <g class="cls-21">
+          <g class="cls-13">
+            <path class="cls-2" d="M663.75,237.12c43.14,0,78.12-34.97,78.12-78.12s-34.97-78.12-78.12-78.12-78.12,34.97-78.12,78.12,34.97,78.12,78.12,78.12"/>
+          </g>
+        </g>
+        <g class="cls-21">
+          <g class="cls-12">
+            <path class="cls-33" d="M761.91,237.12c43.14,0,78.12-34.97,78.12-78.12s-34.97-78.12-78.12-78.12-78.12,34.97-78.12,78.12,34.97,78.12,78.12,78.12"/>
+          </g>
+        </g>
+        <path class="cls-32" d="M602.52,538.17c16.1,0,28.16,10.81,28.16,26.91s-12.06,26.76-28.16,26.76-28.24-11.47-28.24-26.76,12.06-26.91,28.24-26.91"/>
+        <path class="cls-32" d="M672.22,538.98l26.33,46.67c.59,1.05-.17,2.36-1.38,2.36h-52.56c-1.21,0-1.97-1.3-1.38-2.36l26.22-46.67c.6-1.08,2.15-1.08,2.76,0"/>
+        <path class="cls-32" d="M589.98,640.05c.92,0,1.38.38,1.53,1.15.77,3.9,4.05,6.35,11.32,6.35s10.63-2.75,10.63-6.04c0-2.14-1.53-4.06-6.12-4.44l-11.93-.99c-9.33-.77-14.3-5.05-14.3-11.93,0-7.96,6.96-15.3,20.5-15.3s20.12,6.5,20.12,13.85c0,.69-.53,1.3-1.45,1.3h-7.57c-.77,0-1.22-.23-1.38-1.15-.46-2.68-3.06-5.28-9.79-5.28s-10.02,2.6-10.02,5.97c0,2.07,1.38,3.59,5.58,3.9l11.86.99c10.71.92,14.92,6.27,14.92,12.62,0,7.19-6.2,15.22-21.04,15.22-14,0-21.72-6.65-21.72-14.23v-.61c0-.77.61-1.38,1.45-1.38h7.42Z"/>
+        <path class="cls-32" d="M696.98,610.38c.46,0,.92.46.92.92v44.06c0,.46-.46.92-.92.92h-8.57c-.46,0-.92-.46-.92-.92v-28.07h-.23s-.92,2.29-2.83,4.9l-13.54,19.05-13.62-19.05c-1.84-2.6-2.76-4.9-2.76-4.9h-.23v28.07c0,.46-.46.92-.92.92h-8.57c-.46,0-.92-.46-.92-.92v-44.06c0-.46.46-.92.92-.92h6.73c.54,0,1.07.23,1.45.77l17.82,24.94h.15l17.82-24.94c.38-.54.92-.77,1.45-.77h6.73Z"/>
+        <path class="cls-32" d="M18.06,352.5l7.12,7.11-1.06,1.06-7.12-7.11-7.12,7.11-1.06-1.06,7.12-7.11-7.12-7.12,1.06-1.06,7.12,7.12,7.12-7.12,1.06,1.06-7.12,7.12ZM33.5,352.5c0-9.11-7.39-16.5-16.5-16.5s-16.5,7.39-16.5,16.5,7.39,16.5,16.5,16.5,16.5-7.39,16.5-16.5"/>
+        <path class="cls-32" d="M468.06,352.5l7.12,7.11-1.06,1.06-7.12-7.11-7.12,7.11-1.06-1.06,7.12-7.11-7.12-7.12,1.06-1.06,7.12,7.12,7.12-7.12,1.06,1.06-7.12,7.12ZM483.5,352.5c0-9.11-7.39-16.5-16.5-16.5s-16.5,7.39-16.5,16.5,7.39,16.5,16.5,16.5,16.5-7.39,16.5-16.5"/>
+        <path class="cls-32" d="M918.06,352.5l7.12,7.11-1.06,1.06-7.12-7.11-7.12,7.11-1.06-1.06,7.12-7.11-7.12-7.12,1.06-1.06,7.12,7.12,7.12-7.12,1.06,1.06-7.12,7.12ZM933.5,352.5c0-9.11-7.39-16.5-16.5-16.5s-16.5,7.39-16.5,16.5,7.39,16.5,16.5,16.5,16.5-7.39,16.5-16.5"/>
+        <path class="cls-32" d="M18.06,772.5l7.12,7.11-1.06,1.06-7.12-7.11-7.12,7.11-1.06-1.06,7.12-7.11-7.12-7.12,1.06-1.06,7.12,7.12,7.12-7.12,1.06,1.06-7.12,7.12ZM33.5,772.5c0-9.11-7.39-16.5-16.5-16.5s-16.5,7.39-16.5,16.5,7.39,16.5,16.5,16.5,16.5-7.39,16.5-16.5"/>
+        <path class="cls-32" d="M467.06,775.5l7.12,7.11-1.06,1.06-7.12-7.11-7.12,7.11-1.06-1.06,7.12-7.11-7.12-7.12,1.06-1.06,7.12,7.12,7.12-7.12,1.06,1.06-7.12,7.12ZM482.5,775.5c0-9.11-7.39-16.5-16.5-16.5s-16.5,7.39-16.5,16.5,7.39,16.5,16.5,16.5,16.5-7.39,16.5-16.5"/>
+      </g>
+      <text class="cls-3" transform="translate(51.5 360)"><tspan x="0" y="0">Don</tspan><tspan class="cls-24" x="34.04" y="0">’</tspan><tspan x="38.72" y="0">t use i</tspan><tspan class="cls-16" x="87.07" y="0">l</tspan><tspan x="91.4" y="0">legible color combinations</tspan></text>
+      <text class="cls-3" transform="translate(501.5 360)"><tspan x="0" y="0">Don</tspan><tspan class="cls-25" x="34.04" y="0">’</tspan><tspan x="38.72" y="0">t a</tspan><tspan class="cls-17" x="59.4" y="0">d</tspan><tspan class="cls-19" x="70.42" y="0">just the transpa</tspan><tspan class="cls-27" x="195.14" y="0">r</tspan><tspan x="201.17" y="0">ency of colors</tspan></text>
+      <text class="cls-3" transform="translate(951.5 360)"><tspan x="0" y="0">Don</tspan><tspan class="cls-24" x="34.04" y="0">’</tspan><tspan x="38.72" y="0">t mo</tspan><tspan class="cls-15" x="76.08" y="0">d</tspan><tspan class="cls-14" x="87.1" y="0">ify the brand colors</tspan></text>
+      <text class="cls-3" transform="translate(51.5 779.99)"><tspan x="0" y="0">Don</tspan><tspan class="cls-24" x="34.04" y="0">’</tspan><tspan x="38.72" y="0">t c</tspan><tspan class="cls-26" x="58.73" y="0">r</tspan><tspan class="cls-20" x="64.76" y="0">eate gradients out of our colors</tspan></text>
+      <text class="cls-3" transform="translate(500.49 783)"><tspan x="0" y="0">Don</tspan><tspan class="cls-24" x="34.04" y="0">’</tspan><tspan class="cls-20" x="38.72" y="0">t mo</tspan><tspan class="cls-15" x="76.08" y="0">d</tspan><tspan class="cls-14" x="87.1" y="0">ify logo color</tspan></text>
+      <text class="cls-29" transform="translate(112.07 228.66)"><tspan class="cls-28" x="0" y="0">AB</tspan><tspan class="cls-22" x="131.28" y="0">C</tspan></text>
+      <g class="cls-11">
+        <path class="cls-18" d="M996.48,207.23c26.64,0,48.23-21.59,48.23-48.23s-21.59-48.23-48.23-48.23-48.23,21.59-48.23,48.23,21.59,48.23,48.23,48.23"/>
+        <path class="cls-23" d="M1112.25,207.23c26.64,0,48.23-21.59,48.23-48.23s-21.59-48.23-48.23-48.23-48.23,21.59-48.23,48.23,21.59,48.23,48.23,48.23"/>
+        <path class="cls-6" d="M1228.02,207.23c26.64,0,48.23-21.59,48.23-48.23s-21.59-48.23-48.23-48.23-48.23,21.59-48.23,48.23,21.59,48.23,48.23,48.23"/>
+      </g>
+    </g>
+  </g>
+</svg>

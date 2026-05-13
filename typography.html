@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typography — Sun Mountain</title>
+  <meta name="description" content="Brand typefaces, hierarchy, and usage." />
+  <link rel="icon" href="assets/logos/Icon_2_Sand.svg" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body class="bg-white">
+
+  <nav class="site-nav" aria-label="Primary">
+    <a href="index.html" class="site-nav__brand-link" aria-label="Sun Mountain home">
+      <img class="site-nav__brand" src="assets/logos/Icon_2_Sand.svg" alt="Sun Mountain icon" />
+    </a>
+    <button class="site-nav__menu-toggle" aria-expanded="false" aria-controls="site-nav-items" aria-label="Open menu"><span class="bar"></span><span class="bar"></span></button>
+    <div class="site-nav__items" id="site-nav-items">
+      <a class="site-nav__item" href="brand.html"        data-page="brand.html">Brand</a>
+      <a class="site-nav__item" href="logo.html"         data-page="logo.html">Logo</a>
+      <a class="site-nav__item" href="color.html"        data-page="color.html">Color</a>
+      <a class="site-nav__item" href="typography.html"   data-page="typography.html">Typography</a>
+      <a class="site-nav__item" href="grid.html"         data-page="grid.html">Grid &amp; Layouts</a>
+      <a class="site-nav__item" href="photography.html"  data-page="photography.html">Photography</a>
+      <a class="site-nav__item" href="application.html"  data-page="application.html">Application</a>
+      <a class="site-nav__item" href="downloads.html"    data-page="downloads.html">Downloads</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>TYPO<br />GRAPHY</h1>
+      <a class="btn btn--ghost" href="assets/downloads/sun-mountain-fonts.zip" download>Download All Fonts</a>
+    </section>
+
+    <!-- Typography Overview — Figma 33:2152.
+         Auto-synced from _partials/typography-overview.html via build.py. -->
+    <section class="type-overview">
+      <div class="container">
+        <p class="logo-section__lead">Typography Overview</p>
+        <!-- @partial:typography-overview -->
+<div class="type-row">
+  <span class="meta-label">Display Headlines</span>
+  <span class="meta-font">Freight Display Cmp Pro - Bold Italic</span>
+  <img class="type-row__sample" src="assets/photos/freight%20letters.png" alt="Freight Display Compressed Pro alphabet sample" />
+</div>
+<div class="type-row">
+  <span class="meta-label">Headlines &amp; Subheads</span>
+  <span class="meta-font">Bicyclette - Thin</span>
+  <img class="type-row__sample" src="assets/photos/Bicyclette%20letters.png" alt="Bicyclette alphabet sample" />
+</div>
+<div class="type-row">
+  <span class="meta-label">Body Text</span>
+  <span class="meta-font">Avenir - Book</span>
+  <img class="type-row__sample" src="assets/photos/Avenir%20letters.png" alt="Avenir alphabet sample" />
+</div>
+<div class="type-row">
+  <span class="meta-label">Web Font (buttons)</span>
+  <span class="meta-font">Bricolage Grotesque - Extra Light</span>
+  <img class="type-row__sample" src="assets/photos/Bricolage%20letters.png" alt="Bricolage Grotesque alphabet sample" />
+</div>
+        <!-- @endpartial -->
+      </div>
+    </section>
+
+    <!-- Type Hierarchy — per Figma 33:2193 -->
+    <section class="type-hierarchy">
+      <div class="container">
+        <p class="logo-section__lead">Type Hierarchy</p>
+
+        <!-- Display Headline -->
+        <div class="type-hierarchy__row">
+          <span class="meta-label">Display Headline</span>
+          <span class="meta-stack">
+            <span>Freight Display Compressed Pro</span>
+            <span>80% Leading</span>
+            <span>Metric -10 Tracking</span>
+          </span>
+          <span class="meta-stack">
+            <span>Bold</span>
+            <span>120pt/72pt</span>
+            <span>-10</span>
+          </span>
+          <span class="th-sample th-display">Display Headlines</span>
+        </div>
+
+        <!-- Headlines -->
+        <div class="type-hierarchy__row">
+          <span class="meta-label">Headlines</span>
+          <span class="meta-stack">
+            <span>Bicyclette</span>
+            <span>100% Leading</span>
+            <span>Metric -20 Tracking</span>
+          </span>
+          <span class="meta-stack">
+            <span>Thin</span>
+            <span>54pt/64pt</span>
+            <span>0</span>
+          </span>
+          <span class="th-sample th-headline">HEADLINES</span>
+        </div>
+
+        <!-- Subheadings -->
+        <div class="type-hierarchy__row">
+          <span class="meta-label">Subheadings</span>
+          <span class="meta-stack">
+            <span>Bicyclette</span>
+            <span>110% Leading</span>
+            <span>Metric -5 Tracking</span>
+          </span>
+          <span class="meta-stack">
+            <span>Light</span>
+            <span>36pt/39.6pt</span>
+            <span>-5</span>
+          </span>
+          <span class="th-sample th-sub">SUBHEADINGS AND<br />INTRODUCTORY PARAGRAPHS</span>
+        </div>
+
+        <!-- Label -->
+        <div class="type-hierarchy__row">
+          <span class="meta-label">Label</span>
+          <span class="meta-stack">
+            <span>Avenir</span>
+            <span>120% Leading (auto)</span>
+            <span>Metric 0 Tracking</span>
+          </span>
+          <span class="meta-stack">
+            <span>Medium</span>
+            <span>16pt/19.2pt</span>
+            <span>50</span>
+          </span>
+          <span class="th-sample th-label">TITLE SUBSECTIONS IN SEMIBOLD &amp; ALL CAPS<br />WITH 100 TRACKING TO CREATE CONTRAST</span>
+        </div>
+
+        <!-- Body Text -->
+        <div class="type-hierarchy__row">
+          <span class="meta-label">Body Text</span>
+          <span class="meta-stack">
+            <span>Avenir</span>
+            <span>120% Leading (auto)</span>
+            <span>Metric 0 Tracking</span>
+          </span>
+          <span class="meta-stack">
+            <span>Roman</span>
+            <span>16pt/19.2pt</span>
+            <span>0</span>
+          </span>
+          <p class="th-sample th-body">
+            Sun Mountain helps you play your best by taking care of the details&mdash;so you can swing with confidence. From ultra-durable bags to weather-ready apparel, every product is built without compromise to the TQR standard.
+          </p>
+        </div>
+
+        <!-- Captions -->
+        <div class="type-hierarchy__row">
+          <span class="meta-label">Captions</span>
+          <span class="meta-stack">
+            <span>Avenir</span>
+            <span>120% Leading (auto)</span>
+            <span>Metric 0 Tracking</span>
+          </span>
+          <span class="meta-stack">
+            <span>Roman</span>
+            <span>8pt/9.6pt</span>
+            <span>0</span>
+          </span>
+          <p class="th-sample th-caption">
+            Sun Mountain helps you play your best by taking care of the details&mdash;so you can swing with confidence. From ultra-durable bags to weather-ready apparel, every product is built without compromise to the TQR standard.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <img class="site-footer__wordmark" src="assets/logos/Wordmark_L_Sand.svg" alt="Sun Mountain" />
+      <div class="site-footer__contact">
+        <div class="site-footer__contact-label">Contact</div>
+        <p class="site-footer__contact-text">For Brand, Press, and Partnership questions reach out to:</p>
+        <div class="site-footer__contact-card">
+          <span class="name">Grant Lordan</span>
+          <span>Sr. Director Marketing &amp; Brand Strategy</span>
+          <span>M: 425-761-8233</span>
+          <a href="mailto:glordan@sunmountain.com">glordan@sunmountain.com</a>
+        </div>
+      </div>
+      <p class="site-footer__legal">
+        Copyright &copy; <span data-year>2026</span> Sun Mountain Sports. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

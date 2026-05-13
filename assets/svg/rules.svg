@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 252 98.86">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #231f20;
+        font-family: Avenir-Roman, Avenir;
+        font-size: 12px;
+      }
+
+      .cls-2 {
+        stroke: #231f20;
+        stroke-width: .66px;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-6 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="252" height="98.86"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" width="252" height="98.86"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" width="252" height="98.86"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-7">
+      <path class="cls-2" d="M12.98,62.03c6.96,0,12.6-5.64,12.6-12.6s-5.64-12.6-12.6-12.6S.38,42.47.38,49.43s5.64,12.6,12.6,12.6Z"/>
+    </g>
+    <text class="cls-3" transform="translate(9.64 53.61)"><tspan x="0" y="0">2</tspan></text>
+    <g class="cls-4">
+      <path class="cls-2" d="M12.98,25.53c6.96,0,12.6-5.64,12.6-12.6S19.94.33,12.98.33.38,5.97.38,12.93s5.64,12.6,12.6,12.6Z"/>
+    </g>
+    <text class="cls-3" transform="translate(9.64 17.11)"><tspan x="0" y="0">1</tspan></text>
+    <g class="cls-5">
+      <path class="cls-2" d="M12.98,98.53c6.96,0,12.6-5.64,12.6-12.6s-5.64-12.6-12.6-12.6S.38,78.97.38,85.93s5.64,12.6,12.6,12.6Z"/>
+    </g>
+    <text class="cls-3" transform="translate(9.64 90.11)"><tspan x="0" y="0">3</tspan></text>
+    <text class="cls-3" transform="translate(40.21 16.53)"><tspan x="0" y="0">26px ma</tspan><tspan class="cls-6" x="46.46" y="0">r</tspan><tspan x="50.48" y="0">gin x 2 = 52px</tspan></text>
+    <text class="cls-3" transform="translate(40.21 54.03)"><tspan x="0" y="0">26px ma</tspan><tspan class="cls-6" x="46.46" y="0">r</tspan><tspan x="50.48" y="0">gin x 2 = 52px</tspan></text>
+    <text class="cls-3" transform="translate(40.21 91.53)"><tspan x="0" y="0">33px ma</tspan><tspan class="cls-6" x="46.46" y="0">r</tspan><tspan x="50.48" y="0">gin x 2 = 66px</tspan></text>
+  </g>
+</svg>

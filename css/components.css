@@ -1,0 +1,353 @@
+/* ============================================================
+   Shared components — Nav, Footer, Buttons, common patterns
+   ============================================================ */
+
+/* ----- Site nav ----- */
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 18px 32px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--c-sand);
+}
+
+.site-nav__brand-link { display: flex; align-items: center; flex-shrink: 0; }
+.site-nav__brand {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.site-nav__items {
+  display: flex;
+  align-items: center;
+  /* Per Figma: 135px gap from the icon to the first link ("BRAND"),
+     then links distribute evenly across the remaining width so the
+     last link sits flush with the right padding. */
+  margin-left: 135px;
+  flex: 1;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.site-nav__item {
+  font-family: var(--ff-label);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--ls-uppercase);
+  text-transform: uppercase;
+  color: var(--c-sand);
+  font-variation-settings: "opsz" 14, "wdth" 100;
+  transition: opacity var(--transition);
+  white-space: nowrap;
+}
+
+.site-nav__item:hover { opacity: 0.7; }
+.site-nav__item.is-active { font-weight: 700; }
+
+/* ----- Hamburger toggle (two thin lines that animate to an X) ----- */
+.site-nav__menu-toggle {
+  display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--c-sand);
+}
+
+.site-nav__menu-toggle .bar {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  height: 1px;
+  background: currentColor;
+  transition: top 0.25s ease, transform 0.25s ease;
+  transform-origin: 50% 50%;
+}
+.site-nav__menu-toggle .bar:nth-child(1) { top: 12px; }
+.site-nav__menu-toggle .bar:nth-child(2) { top: 19px; }
+
+.site-nav.is-open .site-nav__menu-toggle .bar:nth-child(1) {
+  top: 15px;
+  transform: rotate(45deg);
+}
+.site-nav.is-open .site-nav__menu-toggle .bar:nth-child(2) {
+  top: 15px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 1180px) {
+  .site-nav { padding: 14px 24px; }
+  /* Tighten the icon→first-link gap proportionally and switch to a
+     fixed gap so links don't crowd at narrow desktop widths. */
+  .site-nav__items {
+    margin-left: 64px;
+    gap: 22px;
+    justify-content: flex-start;
+    flex: 0 1 auto;
+  }
+  .site-nav__item { font-size: 13px; }
+}
+
+@media (max-width: 900px) {
+  .site-nav__menu-toggle { display: block; }
+  .site-nav__items {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0;
+    flex: none;
+    gap: var(--s-3);
+    background: var(--c-scratch-black);
+    padding: var(--s-4) var(--s-5);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition), transform var(--transition);
+  }
+  .site-nav.is-open .site-nav__items {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-label);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--ls-uppercase);
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 0.5px solid transparent;
+  background: var(--c-scratch-black);
+  color: var(--c-sand);
+  font-variation-settings: "opsz" 14, "wdth" 100;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--c-sand);
+  color: var(--c-scratch-black);
+  border-color: var(--c-scratch-black);
+}
+
+/* Ghost button — used in page heroes (dark green) */
+.btn--ghost {
+  background: var(--c-scratch-black);
+  color: var(--c-sand);
+  border: 0.5px solid var(--c-sand);
+}
+.btn--ghost:hover {
+  background: var(--c-sand);
+  color: var(--c-scratch-black);
+}
+
+.btn--inverse {
+  background: var(--c-sand);
+  color: var(--c-scratch-black);
+  border-color: var(--c-scratch-black);
+}
+.btn--inverse:hover {
+  background: var(--c-scratch-black);
+  color: var(--c-sand);
+}
+
+.btn--small { padding: 10px 22px; font-size: 12px; }
+
+/* ----- Footer (matches Figma: wordmark left, contact right; left-aligned text) ----- */
+.site-footer {
+  background: var(--c-scratch-black);
+  color: var(--c-sand);
+  padding: 80px var(--s-7) 32px;
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: var(--s-6) var(--s-7);
+}
+
+.site-footer__wordmark {
+  width: 197px;
+  height: auto;
+}
+
+.site-footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-3);
+  text-align: left;
+}
+
+.site-footer__contact-label {
+  font-family: var(--ff-sub);
+  font-weight: 300;
+  font-size: var(--fs-body-lg);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-white);
+}
+
+.site-footer__contact-text {
+  font-family: var(--ff-body);
+  font-size: var(--fs-meta);
+  line-height: 1.5;
+  color: var(--c-sand);
+  max-width: 386px;
+}
+
+.site-footer__contact-card {
+  font-family: var(--ff-sub);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--c-sand);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.site-footer__contact-card .name {
+  font-family: var(--ff-sub);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.site-footer__contact-card a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer__legal {
+  grid-column: 1 / -1;
+  font-family: var(--ff-body);
+  font-weight: 300;
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-white);
+  opacity: 0.85;
+  margin-top: var(--s-7);
+}
+
+@media (max-width: 900px) {
+  .site-footer { padding: 64px var(--s-5) 32px; }
+  .site-footer__inner { grid-template-columns: 1fr; gap: var(--s-5); }
+  .site-footer__legal { margin-top: var(--s-5); }
+}
+
+@media (max-width: 600px) {
+  .site-footer { padding: 48px var(--s-4) 24px; }
+}
+
+/* ----- Eyebrow rule (used on Logo, Color, Typography sections) ----- */
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-3) 0 var(--s-2);
+  border-top: 1px solid var(--rule-on-light);
+}
+
+.body-bg-black .eyebrow-row { border-top-color: var(--rule-on-dark); }
+
+/* ----- Section title (display italic, used inside sections) ----- */
+.section-display-title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--c-scratch-black);
+}
+
+/* ----- Tri-column body card pattern ----- */
+.tri-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+
+.tri-card { display: flex; flex-direction: column; gap: var(--s-3); }
+.tri-card__title {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(36px, 3.5vw, 53px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+.tri-card__rule {
+  height: 1px; border: 0;
+  background: currentColor; opacity: 0.4;
+  margin: var(--s-1) 0;
+}
+.tri-card__body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body-sm);
+  line-height: 1.5;
+  color: inherit;
+}
+
+@media (max-width: 900px) {
+  .tri-card-grid { grid-template-columns: 1fr; gap: var(--s-4); }
+}
+
+/* ----- Generic image-card / placeholder ----- */
+.media-card {
+  position: relative;
+  background: var(--c-mountain-green);
+  overflow: hidden;
+  display: block;
+}
+
+.media-card img,
+.media-card .placeholder-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-card .placeholder-photo {
+  background: linear-gradient(135deg, #14392e 0%, #20503e 50%, #4a6e3e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(239, 235, 223, 0.55);
+  font-family: var(--ff-label);
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-uppercase);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px;
+  min-height: 100%;
+}

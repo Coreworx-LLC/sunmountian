@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1327.75 888.25">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #e9cb7d;
+      }
+
+      .cls-6, .cls-7, .cls-4, .cls-8, .cls-9 {
+        font-family: Avenir-Medium, Avenir;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .cls-6, .cls-10, .cls-11 {
+        fill: #efebdf;
+      }
+
+      .cls-12, .cls-7, .cls-13 {
+        fill: #121c35;
+      }
+
+      .cls-14, .cls-15, .cls-9 {
+        fill: #1c1c1c;
+      }
+
+      .cls-10, .cls-5, .cls-15, .cls-16, .cls-13 {
+        font-family: FreightDispCmpProBold-Italic, 'Freight Display Compressed';
+        font-size: 72px;
+        font-style: italic;
+      }
+
+      .cls-17, .cls-8, .cls-16 {
+        fill: #113027;
+      }
+
+      .cls-2 {
+        stroke: #000;
+        stroke-width: .5px;
+      }
+
+      .cls-18 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-19 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-20 {
+        fill: #fff;
+      }
+
+      .cls-21 {
+        letter-spacing: 0em;
+      }
+
+      .cls-22 {
+        letter-spacing: 0em;
+      }
+
+      .cls-23 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-24 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-25 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-26 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-27 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-28 {
+        letter-spacing: 0em;
+      }
+
+      .cls-29 {
+        letter-spacing: 0em;
+      }
+
+      .cls-30 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="1327.75" height="888.25"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" width="1327.75" height="888.25"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" width="1327.75" height="888.25"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-12" x="672.75" width="318.38" height="288"/>
+    <polygon class="cls-3" points="672.75 300 672.75 300 672.75 588 991.12 588 991.12 300 672.75 300"/>
+    <rect class="cls-20" x="672.75" y="600" width="318.38" height="288"/>
+    <g class="cls-30">
+      <polygon class="cls-2" points="672.75 600 672.75 600 672.75 888 991.12 888 991.12 600 672.75 600"/>
+    </g>
+    <rect class="cls-12" x="1009.12" width="318.38" height="288"/>
+    <rect class="cls-3" x="1009.12" y="300" width="318.38" height="288"/>
+    <rect class="cls-20" x="1009.12" y="600" width="318.38" height="288"/>
+    <g class="cls-18">
+      <polygon class="cls-2" points="1009.12 600 1009.12 600 1009.12 888 1327.5 888 1327.5 600 1009.12 600"/>
+    </g>
+    <rect class="cls-17" width="318.38" height="288"/>
+    <rect class="cls-11" y="300" width="318.38" height="288"/>
+    <rect class="cls-14" y="600" width="318.38" height="288"/>
+    <rect class="cls-17" x="336.38" width="318.38" height="288"/>
+    <polygon class="cls-11" points="336.38 300 336.38 300 336.38 588 654.75 588 654.75 300 336.38 300"/>
+    <rect class="cls-20" x="336.38" y="600" width="318.38" height="288"/>
+    <g class="cls-19">
+      <polygon class="cls-2" points="336.38 600 336.38 600 336.38 888 654.75 888 654.75 600 336.38 600"/>
+    </g>
+    <text class="cls-6" transform="translate(19.56 34)"><tspan x="0" y="0">Sand on Mountain G</tspan><tspan class="cls-26" x="130.21" y="0">r</tspan><tspan x="135.16" y="0">een</tspan></text>
+    <text class="cls-8" transform="translate(19.56 334.01)"><tspan x="0" y="0">Mountain G</tspan><tspan class="cls-26" x="74.94" y="0">r</tspan><tspan x="79.88" y="0">een on Sand</tspan></text>
+    <text class="cls-6" transform="translate(19.56 634.01)"><tspan x="0" y="0">Sand on Scratch Black</tspan></text>
+    <text class="cls-4" transform="translate(355.94 34.01)"><tspan x="0" y="0">Sun </tspan><tspan class="cls-23" x="27.24" y="0">Y</tspan><tspan x="34.27" y="0">ellow on Mountain G</tspan><tspan class="cls-25" x="166.54" y="0">r</tspan><tspan x="171.47" y="0">een</tspan></text>
+    <text class="cls-7" transform="translate(355.94 334.02)"><tspan x="0" y="0">Deep Blue on Sand</tspan></text>
+    <text class="cls-9" transform="translate(355.94 634.03)"><tspan x="0" y="0">Scratch Black on White</tspan></text>
+    <text class="cls-10" transform="translate(19.69 267)"><tspan class="cls-27" x="0" y="0">A</tspan><tspan class="cls-28" x="36" y="0">B</tspan><tspan class="cls-22" x="70.49" y="0">C</tspan></text>
+    <text class="cls-16" transform="translate(19.69 567.02)"><tspan class="cls-27" x="0" y="0">A</tspan><tspan class="cls-28" x="36" y="0">B</tspan><tspan class="cls-22" x="70.49" y="0">C</tspan></text>
+    <text class="cls-10" transform="translate(19.69 867.05)"><tspan class="cls-27" x="0" y="0">A</tspan><tspan class="cls-28" x="36" y="0">B</tspan><tspan class="cls-22" x="70.49" y="0">C</tspan></text>
+    <text class="cls-5" transform="translate(356.07 267.07)"><tspan class="cls-27" x="0" y="0">A</tspan><tspan class="cls-28" x="36" y="0">B</tspan><tspan class="cls-22" x="70.49" y="0">C</tspan></text>
+    <text class="cls-13" transform="translate(356.07 567.1)"><tspan class="cls-27" x="0" y="0">A</tspan><tspan class="cls-28" x="36" y="0">B</tspan><tspan class="cls-22" x="70.49" y="0">C</tspan></text>
+    <text class="cls-15" transform="translate(356.07 867.12)"><tspan class="cls-27" x="0" y="0">A</tspan><tspan class="cls-28" x="36" y="0">B</tspan><tspan class="cls-22" x="70.49" y="0">C</tspan></text>
+    <text class="cls-6" transform="translate(692.31 34)"><tspan x="0" y="0">Sand on Deep Blue</tspan></text>
+    <text class="cls-8" transform="translate(692.31 334.01)"><tspan x="0" y="0">Mountain G</tspan><tspan class="cls-25" x="74.94" y="0">r</tspan><tspan x="79.87" y="0">een on Sun </tspan><tspan class="cls-24" x="154.35" y="0">Y</tspan><tspan x="161.36" y="0">ellow</tspan></text>
+    <text class="cls-8" transform="translate(692.31 634.01)"><tspan x="0" y="0">Mountain G</tspan><tspan class="cls-25" x="74.94" y="0">r</tspan><tspan x="79.87" y="0">een on White</tspan></text>
+    <text class="cls-4" transform="translate(1028.69 34.01)"><tspan x="0" y="0">Sun </tspan><tspan class="cls-24" x="27.24" y="0">Y</tspan><tspan x="34.26" y="0">ellow on Deep Blue</tspan></text>
+    <text class="cls-7" transform="translate(1028.69 334.02)"><tspan x="0" y="0">Deep Blue on Sun </tspan><tspan class="cls-24" x="117.26" y="0">Y</tspan><tspan x="124.28" y="0">ellow</tspan></text>
+    <text class="cls-7" transform="translate(1028.69 634.03)"><tspan x="0" y="0">Deep Blue on White</tspan></text>
+    <text class="cls-10" transform="translate(692.44 267)"><tspan class="cls-29" x="0" y="0">AB</tspan><tspan class="cls-21" x="70.56" y="0">C</tspan></text>
+    <text class="cls-16" transform="translate(692.44 567.02)"><tspan class="cls-29" x="0" y="0">AB</tspan><tspan class="cls-21" x="70.56" y="0">C</tspan></text>
+    <text class="cls-16" transform="translate(692.44 867.05)"><tspan class="cls-29" x="0" y="0">AB</tspan><tspan class="cls-21" x="70.56" y="0">C</tspan></text>
+    <text class="cls-5" transform="translate(1028.82 267.07)"><tspan class="cls-29" x="0" y="0">AB</tspan><tspan class="cls-21" x="70.56" y="0">C</tspan></text>
+    <text class="cls-13" transform="translate(1028.82 567.1)"><tspan class="cls-29" x="0" y="0">AB</tspan><tspan class="cls-21" x="70.56" y="0">C</tspan></text>
+    <text class="cls-13" transform="translate(1028.82 867.12)"><tspan class="cls-29" x="0" y="0">AB</tspan><tspan class="cls-21" x="70.56" y="0">C</tspan></text>
+  </g>
+</svg>

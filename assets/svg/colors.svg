@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1328.44 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e9cb7d;
+      }
+
+      .cls-2 {
+        fill: #1c1c1c;
+      }
+
+      .cls-3 {
+        fill: #121b35;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        font-family: Avenir-Roman, Avenir;
+      }
+
+      .cls-4, .cls-6 {
+        font-size: 14px;
+      }
+
+      .cls-9 {
+        fill: #0f3027;
+      }
+
+      .cls-5 {
+        font-size: 12px;
+      }
+
+      .cls-5, .cls-6, .cls-10, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7, .cls-8 {
+        font-size: 8px;
+      }
+
+      .cls-13 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-15 {
+        fill: #efebdf;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-2" x="996.56" width="331.88" height="582"/>
+    <rect class="cls-9" width="331.88" height="1080"/>
+    <rect class="cls-3" x="331.88" width="331.88" height="1080"/>
+    <rect class="cls-1" x="663.75" width="331.88" height="582"/>
+    <rect class="cls-15" x="663.75" y="582" width="331.88" height="498"/>
+    <rect class="cls-10" x="995.62" y="602.86" width="331.88" height="477.14"/>
+    <text class="cls-5" transform="translate(358.5 984.2)"><tspan x="0" y="0">RGB: 18, 27, 53</tspan></text>
+    <text class="cls-5" transform="translate(358.5 998.6)"><tspan x="0" y="0">CMYK: 84, 73, 34, 71</tspan></text>
+    <text class="cls-5" transform="translate(358.5 1013)"><tspan x="0" y="0">HEX: #121B35</tspan></text>
+    <text class="cls-8" transform="translate(688.62 539.8)"><tspan x="0" y="0">RGB: 233, 203, 125</tspan></text>
+    <text class="cls-8" transform="translate(688.62 549.4)"><tspan x="0" y="0">CMYK: 9, 18, 60, 0</tspan></text>
+    <text class="cls-8" transform="translate(688.62 559)"><tspan x="0" y="0">HEX: #E9CB7D</tspan></text>
+    <text class="cls-7" transform="translate(1025.31 539.8)"><tspan x="0" y="0">RGB: 28, 28, 28</tspan></text>
+    <text class="cls-7" transform="translate(1025.31 549.4)"><tspan x="0" y="0">CMYK: 72, 66, 65, 77</tspan></text>
+    <text class="cls-7" transform="translate(1025.31 559)"><tspan x="0" y="0">HEX: #1C1C1C</tspan></text>
+    <text class="cls-8" transform="translate(688.62 993.8)"><tspan x="0" y="0">RGB: 239, 235, 223</tspan></text>
+    <text class="cls-8" transform="translate(688.62 1003.4)"><tspan x="0" y="0">CMYK: 6, 5, 11, 0</tspan></text>
+    <text class="cls-8" transform="translate(688.62 1013)"><tspan x="0" y="0">HEX: #EFEBDF</tspan></text>
+    <text class="cls-8" transform="translate(1025.31 993.8)"><tspan x="0" y="0">RGB: 255, 255, 255</tspan></text>
+    <text class="cls-8" transform="translate(1025.31 1003.4)"><tspan x="0" y="0">CMYK: 0, 0, 0, 0</tspan></text>
+    <text class="cls-8" transform="translate(1025.31 1013)"><tspan x="0" y="0">HEX: #FFFFFF</tspan></text>
+    <text class="cls-6" transform="translate(358.5 126.53)"><tspan x="0" y="0">Deep Blue</tspan></text>
+    <text class="cls-4" transform="translate(688.62 125.54)"><tspan x="0" y="0">Sun </tspan><tspan class="cls-13" x="27.24" y="0">Y</tspan><tspan x="34.01" y="0">e</tspan><tspan class="cls-12" x="41.79" y="0">l</tspan><tspan x="45.16" y="0">low</tspan></text>
+    <text class="cls-6" transform="translate(1025.31 125.54)"><tspan x="0" y="0">Scratch Black</tspan></text>
+    <text class="cls-4" transform="translate(688.62 620.01)"><tspan x="0" y="0">Sand</tspan></text>
+    <text class="cls-4" transform="translate(1025.31 620.01)"><tspan x="0" y="0">White</tspan></text>
+    <text class="cls-6" transform="translate(25.09 126.53)"><tspan x="0" y="0">Mountain G</tspan><tspan class="cls-14" x="74.7" y="0">r</tspan><tspan class="cls-11" x="79.39" y="0">een</tspan></text>
+    <text class="cls-5" transform="translate(25.1 984.2)"><tspan x="0" y="0">RGB: 15, 48, 39</tspan></text>
+    <text class="cls-5" transform="translate(25.1 998.6)"><tspan x="0" y="0">CMYK: 84, 54, 72, 66</tspan></text>
+    <text class="cls-5" transform="translate(25.1 1013)"><tspan x="0" y="0">HEX: #113027</tspan></text>
+  </g>
+</svg>

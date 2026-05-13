@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color — Sun Mountain</title>
+  <meta name="description" content="Brand color palette, type and color usage, application examples, and color misuse." />
+  <link rel="icon" href="assets/logos/Icon_2_Sand.svg" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body class="bg-white">
+
+  <nav class="site-nav" aria-label="Primary">
+    <a href="index.html" class="site-nav__brand-link" aria-label="Sun Mountain home">
+      <img class="site-nav__brand" src="assets/logos/Icon_2_Sand.svg" alt="Sun Mountain icon" />
+    </a>
+    <button class="site-nav__menu-toggle" aria-expanded="false" aria-controls="site-nav-items" aria-label="Open menu"><span class="bar"></span><span class="bar"></span></button>
+    <div class="site-nav__items" id="site-nav-items">
+      <a class="site-nav__item" href="brand.html"        data-page="brand.html">Brand</a>
+      <a class="site-nav__item" href="logo.html"         data-page="logo.html">Logo</a>
+      <a class="site-nav__item" href="color.html"        data-page="color.html">Color</a>
+      <a class="site-nav__item" href="typography.html"   data-page="typography.html">Typography</a>
+      <a class="site-nav__item" href="grid.html"         data-page="grid.html">Grid &amp; Layouts</a>
+      <a class="site-nav__item" href="photography.html"  data-page="photography.html">Photography</a>
+      <a class="site-nav__item" href="application.html"  data-page="application.html">Application</a>
+      <a class="site-nav__item" href="downloads.html"    data-page="downloads.html">Downloads</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>COLOR</h1>
+      <a class="btn btn--ghost" href="assets/downloads/SM_Color_Palette.ase" download>Download Color Palette</a>
+    </section>
+
+    <!-- Color Overview — Figma 30:1422.
+         The block between @partial:color-overview markers is auto-synced
+         from _partials/color-overview.html by build.py. Edit the partial,
+         then run `python3 build.py` to update every page that uses it. -->
+    <section class="logo-section">
+      <div class="container">
+        <p class="logo-section__lead">Color Overview</p>
+        <!-- @partial:color-overview -->
+<div class="color-overview">
+  <div class="swatch swatch--mountain">
+    <span class="swatch__name">Mountain Green</span>
+    <span class="swatch__values">RGB: 15, 48, 39
+CMYK: 84, 54, 72, 66
+HEX: #113027</span>
+  </div>
+  <div class="swatch swatch--blue">
+    <span class="swatch__name">Deep Blue</span>
+    <span class="swatch__values">RGB: 18, 27, 53
+CMYK: 84, 73, 34, 71
+HEX: #121B35</span>
+  </div>
+  <div class="swatch swatch--yellow swatch--small">
+    <span class="swatch__name">Sun Yellow</span>
+    <span class="swatch__values">RGB: 233, 203, 125
+CMYK: 9, 18, 60, 0
+HEX: #E9CB7D</span>
+  </div>
+  <div class="swatch swatch--sand swatch--small">
+    <span class="swatch__name">Sand</span>
+    <span class="swatch__values">RGB: 239, 235, 223
+CMYK: 6, 5, 11, 0
+HEX: #EFEBDF</span>
+  </div>
+  <div class="swatch swatch--black swatch--small">
+    <span class="swatch__name">Scratch Black</span>
+    <span class="swatch__values">RGB: 28, 28, 28
+CMYK: 72, 66, 65, 77
+HEX: #1C1C1C</span>
+  </div>
+  <div class="swatch swatch--white swatch--small">
+    <span class="swatch__name">White</span>
+    <span class="swatch__values">RGB: 255, 255, 255
+CMYK: 0, 0, 0, 0
+HEX: #FFFFFF</span>
+  </div>
+</div>
+        <!-- @endpartial -->
+      </div>
+    </section>
+
+    <!-- Type & Color — Figma 30:1437: single composite image (1196×800) -->
+    <section class="logo-section">
+      <div class="container">
+        <p class="logo-section__lead">Type &amp; Color</p>
+        <div class="color-image-block">
+          <img src="assets/photos/words%20colors%404x%201%404x.png" alt="Type and color combinations" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Examples — Figma 30:1478: single composite image (1196×553) -->
+    <section class="logo-section">
+      <div class="container">
+        <p class="logo-section__lead">Usage Examples</p>
+        <div class="color-image-block">
+          <img src="assets/photos/color%20usage%404x%201%404x.png" alt="Color usage examples in application" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Misuse — per Figma 30:1486 -->
+    <section class="logo-section">
+      <div class="container">
+        <p class="logo-section__lead">Color Misuse</p>
+        <div class="color-misuse-row">
+          <div class="color-misuse-cell">
+            <div class="color-misuse-cell__image"><img src="assets/photos/color%20misuse%404x%201.png" alt="" /></div>
+            <p class="color-misuse-cell__label"><img class="x-icon" src="assets/svg/x-icon.svg" alt="" />Don&rsquo;t outline the logo</p>
+          </div>
+          <div class="color-misuse-cell">
+            <div class="color-misuse-cell__image"><img src="assets/photos/color%20trans%404x%201.png" alt="" /></div>
+            <p class="color-misuse-cell__label"><img class="x-icon" src="assets/svg/x-icon.svg" alt="" />Don&rsquo;t distort the logo</p>
+          </div>
+          <div class="color-misuse-cell">
+            <div class="color-misuse-cell__image"><img src="assets/photos/color%20mod_1%404x%201.png" alt="" /></div>
+            <p class="color-misuse-cell__label"><img class="x-icon" src="assets/svg/x-icon.svg" alt="" />Don&rsquo;t place the logo on an angle</p>
+          </div>
+          <div class="color-misuse-cell">
+            <div class="color-misuse-cell__image"><img src="assets/photos/gradient%404x%201.png" alt="" /></div>
+            <p class="color-misuse-cell__label"><img class="x-icon" src="assets/svg/x-icon.svg" alt="" />Don&rsquo;t add effects to the logo</p>
+          </div>
+          <div class="color-misuse-cell">
+            <div class="color-misuse-cell__image"><img src="assets/photos/logo%20mod_1%404x%201.png" alt="" /></div>
+            <p class="color-misuse-cell__label"><img class="x-icon" src="assets/svg/x-icon.svg" alt="" />Don&rsquo;t change the transparency</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <img class="site-footer__wordmark" src="assets/logos/Wordmark_L_Sand.svg" alt="Sun Mountain" />
+      <div class="site-footer__contact">
+        <div class="site-footer__contact-label">Contact</div>
+        <p class="site-footer__contact-text">For Brand, Press, and Partnership questions reach out to:</p>
+        <div class="site-footer__contact-card">
+          <span class="name">Grant Lordan</span>
+          <span>Sr. Director Marketing &amp; Brand Strategy</span>
+          <span>M: 425-761-8233</span>
+          <a href="mailto:glordan@sunmountain.com">glordan@sunmountain.com</a>
+        </div>
+      </div>
+      <p class="site-footer__legal">
+        Copyright &copy; <span data-year>2026</span> Sun Mountain Sports. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

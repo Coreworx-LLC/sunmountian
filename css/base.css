@@ -1,0 +1,217 @@
+/* ============================================================
+   Base reset + typography
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Playfair+Display:ital,wght@1,700;1,900&display=swap");
+
+/* @font-face — drop the licensed font files into /assets/fonts and these activate. */
+@font-face {
+  font-family: "Freight Display Compressed Pro";
+  src: local("FreightDispCmpProBlack-Italic"),
+       url("../assets/fonts/FreightDispCmpPro-BoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/FreightDispCmpPro-BoldItalic.woff")  format("woff");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bicyclette";
+  src: url("../assets/fonts/Bicyclette-Bold.woff2")  format("woff2"),
+       url("../assets/fonts/Bicyclette-Bold.woff")   format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bicyclette";
+  src: url("../assets/fonts/Bicyclette-Light.woff2") format("woff2"),
+       url("../assets/fonts/Bicyclette-Light.woff")  format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bicyclette";
+  src: url("../assets/fonts/Bicyclette-Thin.woff2") format("woff2"),
+       url("../assets/fonts/Bicyclette-Thin.woff")  format("woff");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir Roman"), local("Avenir-Roman"),
+       url("../assets/fonts/Avenir-Roman.woff2")     format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir Light"), local("Avenir-Light"),
+       url("../assets/fonts/Avenir-Light.woff2")     format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir Book"), local("Avenir-Book"),
+       url("../assets/fonts/Avenir-Book.woff2")      format("woff2");
+  font-style: normal;
+  font-weight: 350;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--fg-on-light);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ----- Page surface variants ----- */
+body.bg-sand   { background: var(--c-sand); }
+body.bg-white  { background: var(--c-white); }
+body.bg-black  { background: var(--c-scratch-black); color: var(--c-sand); }
+
+img,
+svg { display: block; max-width: 100%; height: auto; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p { margin: 0; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Display headings */
+h1, h2, h3, h4 {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: var(--ls-display);
+  margin: 0;
+  line-height: 0.95;
+}
+
+/* ----- Utility ----- */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.container {
+  width: min(var(--content-w), 100% - 2 * var(--s-7));
+  margin-inline: auto;
+}
+
+.label,
+.eyebrow {
+  font-family: var(--ff-label);
+  font-size: var(--fs-meta);
+  letter-spacing: var(--ls-uppercase);
+  text-transform: uppercase;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+  color: rgba(28, 28, 28, 0.5);
+}
+
+.eyebrow { display: block; margin-bottom: var(--s-5); }
+
+.body-bg-black .label,
+.body-bg-black .eyebrow { color: rgba(239, 235, 223, 0.55); }
+
+/* Page-level hero (reused across most subpages — green panel with title + button)
+   Uses a FIXED height (not min-height) so single-line headlines (COLOR) and
+   two-line headlines (PHOTO/GRAPHY, DOWN/LOADS) sit at exactly the same
+   bottom baseline. align-items: flex-end anchors both the headline's last-line
+   line-box and the button to the same bottom edge regardless of line count.
+   51vw matches the Figma's --hero-h: 735px at 1440px design width. */
+.page-hero {
+  background: var(--c-mountain-green);
+  color: var(--c-sand);
+  padding: calc(var(--nav-h) + var(--s-6)) var(--s-7) var(--s-7);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-6);
+  height: clamp(480px, 51vw, 1100px);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero h1 {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 700;
+  /* Per Figma: headline fills the hero. 20vw scales with viewport, 540px cap
+     prevents the 2-line × 0.75 line-height from overflowing the hero on
+     ultrawide displays (>2700px). line-height 0.75 stacks the lines close
+     together to match the design. */
+  font-size: clamp(80px, 20vw, 540px);
+  line-height: 0.75;
+  letter-spacing: -0.05em;
+  color: var(--c-sand);
+  margin: 0;
+}
+
+.page-hero .download-cta,
+.page-hero .btn { flex-shrink: 0; align-self: flex-end; }
+
+main {
+  background: inherit;
+}
+
+section {
+  padding: var(--s-8) 0;
+}
+
+@media (max-width: 1024px) {
+  section { padding: var(--s-7) 0; }
+  .page-hero {
+    padding: calc(var(--nav-h) + var(--s-5)) var(--s-5) var(--s-5);
+    /* Keep flex-row at tablet so headline+button still bottom-align;
+       bump height so the 2-line headline at 20vw fits comfortably. */
+    height: clamp(480px, 60vw, 700px);
+  }
+  .container { width: min(var(--content-w), 100% - 2 * var(--s-5)); }
+}
+
+@media (max-width: 640px) {
+  :root { --fs-display-md: 38px; --fs-display-lg: 48px; --fs-display-xl: 56px; --fs-hero: 56px; }
+  section { padding: var(--s-6) 0; }
+  .container { width: min(var(--content-w), 100% - 2 * var(--s-4)); }
+  .page-hero {
+    padding: calc(var(--nav-h) + var(--s-4)) var(--s-4) var(--s-4);
+    /* On mobile, stack headline above button. Auto height with a generous
+       min so single- and double-line headlines still both render comfortably. */
+    height: auto;
+    min-height: 360px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-3);
+  }
+}
