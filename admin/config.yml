@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/photos"
+public_folder: "/assets/photos"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+
+      - name: "downloads"
+        label: "Downloads Page"
+        file: "downloads.html"
+        fields:
+          - {label: "Photo Library Link", name: "photos_link", widget: "string"}
+          - {label: "Marketing Suite Link", name: "marketing_link", widget: "string"}
+          - {label: "Catalogs Link", name: "catalogs_link", widget: "string"}
+
+      - name: "photography"
+        label: "Photography Page"
+        file: "photography.html"
+        fields:
+          - {label: "Photo Library Link", name: "photos_link", widget: "string"}
